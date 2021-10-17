@@ -3,6 +3,18 @@ import java.util.Scanner;
 //this file is just for testing out library, not much to be seen here
 public class Main {
 
+    //this is what you would call the 'Journey'
+    public static void main(String[] args) {
+        //create the party
+        JourneyLegend[] myParty = createParty();
+        //Display the characters.
+        for (JourneyLegend legend : myParty) {
+            legend.display();
+        }
+        //party finds new loot
+        encounterItem(myParty);
+
+    }
 
     public static JourneyLegend[] createParty () {
         Scanner userInput = new Scanner(System.in);
@@ -94,17 +106,7 @@ public class Main {
         return equipment;
     }
 
-    //this is what you would call the 'Journey'
-    public static void main(String[] args) {
-        //create the party
-        JourneyLegend[] myParty = createParty();
-        //Display the characters.
-        for (JourneyLegend legend : myParty) {
-            legend.display();
-        }
-        //party finds new loot
-        encounterItem(myParty);
 
-    }
+
 
 }
