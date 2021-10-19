@@ -1,2 +1,2 @@
 # Journey
- A command prompt Final Fantasy type game based in Java.
+ A command prompt based Final Fantasy type game programmed in Java.
