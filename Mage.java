@@ -3,7 +3,7 @@ public class Mage extends JourneyLegend{
 
     public Mage(int hp, int mana, int att, int def, String name) {
         super(hp, mana, att, def, name);
-        this.CHARACTER_CLASS = "Mage";
+        this.character_class = "Mage";
     }
 
     public void firstAbility(JourneyLegend target){

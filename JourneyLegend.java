@@ -6,7 +6,7 @@ public class JourneyLegend {
     private int def;
     private final String NAME;
     private JourneyEquipment[] set;
-    protected String CHARACTER_CLASS;
+    protected String character_class;
 
 
     //constructor
@@ -17,7 +17,7 @@ public class JourneyLegend {
         this.def = def;
         this.NAME = name;
         this.set = new JourneyEquipment[11];
-        this.CHARACTER_CLASS = "Default";
+        this.character_class = "Default";
     }
 
     //to equip equipment and altar legend stats accordingly
@@ -54,18 +54,18 @@ public class JourneyLegend {
     }
     //alternate method to unEquip(), unequip a whole set instead of just one piece
     //always returns set of armor that was removed (including empty spaces)
-    public JourneyEquipment[] unEquip(JourneyLegend legend) {
-        JourneyEquipment[] equipSet = legend.getSet();
-        for (JourneyEquipment piece : legend.getSet()) {
+    public JourneyEquipment[] unEquip() {
+        JourneyEquipment[] equipSet = this.getSet();
+        for (JourneyEquipment piece : this.getSet()) {
             if (piece != null) {
-                legend.unEquip(piece.getSlotN());
+                this.unEquip(piece.getSlotN());
             }
         }
         return equipSet;
     }
     //display character stats, name and class depending on subclass
     public void display() {
-        System.out.println(this.getCHARACTER_CLASS() + " " + this.getName() + " stats:");
+        System.out.println(this.getCharacter_class() + " " + this.getName() + " stats:");
         System.out.println("Health: " + this.getHp() + " | " + "Mana: " + this.getMana() + " | " + "Attack: " + this.getAtt() + " | " + "Def: " + this.getDef());
     }
 
@@ -86,7 +86,7 @@ public class JourneyLegend {
     public int getDef() {return this.def;}
     public String getName() {return this.NAME;}
     public JourneyEquipment[] getSet() {return this.set;}
-    public String getCHARACTER_CLASS() { return CHARACTER_CLASS;}
+    public String getCharacter_class() { return character_class;}
 
     //setters
     public void setHP(int hp){this.hp = hp;}

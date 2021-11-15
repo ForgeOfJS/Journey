@@ -1,0 +1,13 @@
+Equipment slots and their meaning. 
+0- Helmet Items
+1- Shoulder Items
+2- Chest Items
+3- Cape Items
+4- Hand Items
+5- Waist Items
+6- Legs Items
+7- Feet Items
+8- Necklace Items
+9- Ring
+10- Left Hand (Weapon/Other)
+11- Right Hand (Weapon/Other)

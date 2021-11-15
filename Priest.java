@@ -2,7 +2,7 @@ public class Priest extends JourneyLegend{
 
     public Priest(int hp, int mana, int att, int def, String name) {
         super(hp, mana, att, def, name);
-        this.CHARACTER_CLASS = "Priest";
+        this.character_class = "Priest";
     }
 
     public void firstAbility(JourneyLegend target){

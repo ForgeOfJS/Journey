@@ -2,7 +2,7 @@ public class Rouge extends JourneyLegend{
 
     public Rouge(int hp, int mana, int att, int def, String name) {
         super(hp, mana, att, def, name);
-        this.CHARACTER_CLASS = "Rouge";
+        this.character_class = "Rouge";
     }
 
     public void firstAbility(JourneyLegend target){

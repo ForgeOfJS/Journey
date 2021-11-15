@@ -2,7 +2,7 @@ public class Hunter extends JourneyLegend{
 
     public Hunter(int hp, int mana, int att, int def, String name) {
         super(hp, mana, att, def, name);
-        this.CHARACTER_CLASS = "Hunter";
+        this.character_class = "Hunter";
     }
 
     public void firstAbility(JourneyLegend target){
