@@ -6,18 +6,20 @@ public class Main {
     //this is what you would call the 'Journey'
     public static void main(String[] args) {
         //create the party
-        JourneyLegend[] myParty = createParty();
+        Scanner input = new Scanner(System.in);
+        JourneyLegend[] myParty = createParty(input);
         //Display the characters.
         for (JourneyLegend legend : myParty) {
             legend.display();
         }
         //party finds new loot
-        encounterItem(myParty);
+        encounterItem(myParty, input);
+
+        input.close();
 
     }
 
-    public static JourneyLegend[] createParty () {
-        Scanner userInput = new Scanner(System.in);
+    public static JourneyLegend[] createParty (Scanner input) {
         System.out.println("Let's create all members of your party of differing class types to join your party.");
         System.out.println("(Diversity of Legends will likely lead to success.)");
 
@@ -26,12 +28,12 @@ public class Main {
         //Creating the characters
         int i = 0;
         while (i < 5) {
-            System.out.println("Which class will member " + String.valueOf(i+1) + " of your party be?");
+            System.out.println("Which class will member " + String.valueOf(i + 1) + " of your party be?");
             System.out.println("1. Mage\n2. Warrior\n3. Rouge\n4. Hunter\n5. Priest");
-            String input = userInput.nextLine();
-            System.out.println("It's name?");
-            String name = userInput.nextLine();
-            switch (input) {
+            String classCheck = input.nextLine();
+            System.out.println("Their name?");
+            String name = input.nextLine();
+            switch (classCheck) {
                 case "1":
                     myParty[i] = new Mage(10, 10, 10, 10, name);
                     i++;
@@ -57,19 +59,18 @@ public class Main {
                     break;
             }
         }
-        userInput.close();
         return myParty;
     }
 
-    public static JourneyEquipment encounterItem (JourneyLegend[] myParty) {
-        JourneyEquipment item = new JourneyEquipment(10, 10, 10, 10, 11, "Iron short-sword");
+    public static JourneyEquipment encounterItem (JourneyLegend[] myParty, Scanner input) {
+        JourneyEquipment ironShortSword = new JourneyEquipment(10, 10, 10, 10, 10, "Iron Short-sword");
 
-        System.out.println("You have found a new item: " + item.getName() + "!" );
-        Scanner input = new Scanner(System.in);
+        System.out.println("You have found a new item: " + ironShortSword.getName() + "!" );
+
         System.out.println("Which party member to give this to?");
-        String userInput = input.nextLine();
+        String partyMember = input.nextLine();
         String name = "";
-        switch (userInput) {
+        switch (partyMember) {
             case "1":
                 name = myParty[0].getName();
                 break;
@@ -87,22 +88,12 @@ public class Main {
                 break;
             default:
                 System.out.println("Invalid party member");
-                return item;
+                return ironShortSword;
         }
-        JourneyEquipment equipment = myParty[Integer.parseInt(userInput)-1].equip(item);
+        JourneyEquipment equipment = myParty[Integer.parseInt(partyMember)-1].equip(ironShortSword);
         if (name != "") {
-            System.out.println("Item was equipped by " + myParty[Integer.parseInt(userInput)-1].getName());
-            myParty[Integer.parseInt(userInput)-1].display();
-            if (equipment != null) {
-                System.out.println(equipment.getName() + " was also unequipped.");
-            }
-            myParty[Integer.parseInt(userInput)-1].display();
+            myParty[Integer.parseInt(partyMember)-1].display();
         }
-        else {
-            System.out.println("Invalid party member");
-        }
-
-        input.close();
         return equipment;
     }
 

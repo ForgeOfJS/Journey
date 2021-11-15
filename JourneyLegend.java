@@ -16,7 +16,7 @@ public class JourneyLegend {
         this.att = att;
         this.def = def;
         this.NAME = name;
-        this.set = new JourneyEquipment[11];
+        this.set = new JourneyEquipment[12];
         this.character_class = "Default";
     }
 
@@ -33,7 +33,7 @@ public class JourneyLegend {
             this.att += piece.getAtt();
             this.def += piece.getDef();
         }
-        System.out.println(piece.getName() + " has been equipped.");
+        System.out.println(piece.getName() + " has been equipped by " + this.getName() + " .");
         return unequipItem;
     }
     //to unequip equipment and altar legend stats accordingly
@@ -46,7 +46,7 @@ public class JourneyLegend {
             this.att -= piece.getAtt();
             this.def -= piece.getDef();
             this.set[slotN] = null;
-            System.out.println(piece.getName() + " has been unequipped.");
+            System.out.println(piece.getName() + " has been unequipped by " + this.getName() + ".");
         } else {
             System.out.println("No item in that slot.");
         }

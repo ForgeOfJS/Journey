@@ -1,0 +1,4 @@
+A storage of equipment that is in the game.
+JourneyEquipment ironShortSword = new JourneyEquipment(10, 10, 10, 10, 10, "Iron Short-sword");
+JourneyEquipment ironMace = new JourneyEquipment(20, 10, 10, 10, 10, "Iron Mace");
+JourneyEquipment ironHelmet = new JourneyEquipment(10, 10, 10, 20, 10, "Iron Helmet");
